@@ -40,7 +40,7 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jstl-api-1.2.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jstl-impl-1.2.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mybatis-spring-1.1.0-SNAPSHOT.jar" />
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mybatis-spring-1.1.0-SNAPSHOT.jar" sourcepath="I:/J2EE资料/mybatis/mybatis-spring-1.1.0-SNAPSHOT-bundle/mybatis-spring-1.1.0-SNAPSHOT/mybatis-spring-1.1.0-SNAPSHOT-sources.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mybatis-3.1.0-SNAPSHOT.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
