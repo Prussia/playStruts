@@ -11,10 +11,10 @@ import com.pdsu.edu.domain.User;
 import com.pdsu.edu.service.UserService;
 
 /**
- * 类说明：用户Action
+ * 锟斤拷说锟斤拷锟斤拷锟矫伙拷Action
  * 
- * @author 作者: LiuJunGuang
- * @version 创建时间：2012-3-25 下午03:29:52
+ * @author 锟斤拷锟斤拷: LiuJunGuang
+ * @version 锟斤拷锟斤拷时锟戒：2012-3-25 锟斤拷锟斤拷03:29:52
  */
 @Controller
 @Scope("prototype")
@@ -35,7 +35,7 @@ public class UserAction extends ActionSupport {
 				return SUCCESS;
 			}
 		}
-		this.addFieldError("user.username", "用户名或密码错误!");
+		this.addFieldError("user.username", "user name or password is not correct!");
 		return INPUT;
 	}
 
