@@ -20,6 +20,14 @@
 		</interceptors>
 		<default-interceptor-ref name="loginStack" />
 
+		<!-- 将result设置为全局的，这样就不用在每一个package里面都添加拦截器了 -->
+		<global-results>
+			<result name="login" type="redirectAction">
+				<param name="actionName">user_login</param>
+				<param name="namespace">/user</param>
+				<param name="code">1002</param>
+			</result>
+		</global-results>
 		<action name="user_*" class="userAction" method="{1}">
 			<result name="success" type="redirectAction">user_queryAllUser.action</result>
 			<result name="input">/index.jsp</result>
@@ -27,5 +35,7 @@
 			<result name="addUser">/userAdd.jsp</result>
 			<result name="updateUser">/userUpdate.jsp</result>
 		</action>
+
+
 	</package>
 </struts>    
