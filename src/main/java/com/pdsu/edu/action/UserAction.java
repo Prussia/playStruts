@@ -1,7 +1,9 @@
 package com.pdsu.edu.action;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -18,20 +20,37 @@ import com.pdsu.edu.service.UserService;
  */
 @Controller
 @Scope("prototype")
-public class UserAction extends ActionSupport {
+public class UserAction extends ActionSupport implements SessionAware{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5939499645981127614L;
+	
 	@Autowired
 	private UserService userService;
 	private User user;
 	private List<User> userList;
+	private Map<String, Object> session; 
 
 	public String execute() throws Exception {
 		return null;
+	}
+	
+	public void validate(){
+		if (user != null) {
+			User user2 = userService.login(user);
+			if (user2 == null) {
+				this.addFieldError("user.username", "user name or password is not correct!");
+			}
+		}
 	}
 
 	public String login() {
 		if (user != null) {
 			User user2 = userService.login(user);
 			if (user2 != null) {
+				user2.setPassword(null);
+//				session.put("cur_user", user2); 
 				return SUCCESS;
 			}
 		}
@@ -82,6 +101,12 @@ public class UserAction extends ActionSupport {
 
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+		
 	}
 
 }
