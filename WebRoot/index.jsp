@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <center>
     	<h1>用户登录</h1>
     	<s:a action="user_addUI" namespace="/user">添加新用户</s:a>
-    	<s:form action="user_login" namespace="/user" method="post">
+    	<s:form action="user_login" namespace="/user" method="post" >
     		<s:textfield label="用户名" name="user.username"></s:textfield>
     		<s:password label="密码" name="user.password"></s:password>
     		<s:submit value="登录"></s:submit>
