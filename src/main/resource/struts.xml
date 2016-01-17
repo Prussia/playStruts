@@ -16,6 +16,7 @@
 			<interceptor-stack name="loginStack">
 				<interceptor-ref name="authority" />
 				<interceptor-ref name="defaultStack" />
+				
 			</interceptor-stack>
 		</interceptors>
 		<default-interceptor-ref name="loginStack" />
