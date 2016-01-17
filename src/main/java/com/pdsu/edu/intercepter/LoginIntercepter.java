@@ -19,6 +19,10 @@ public class LoginIntercepter extends AbstractInterceptor {
 	public String intercept(ActionInvocation invocation) throws Exception {
 		String namespace = invocation.getProxy().getNamespace();  
         String actionName = invocation.getProxy().getActionName();  
+       log.info("namespace" + namespace);
+       log.info("actionName = " + actionName);
+       log.info("user.username = " + invocation.getInvocationContext().getContext().getValueStack().findValue("user.username"));
+       
 //        invocation.getStack().findValue("user.username");
 //        invocation.getProxy().getAction().
           
